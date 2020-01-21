@@ -27,6 +27,8 @@ Step 3 :-> Press"Windows+R" type "shell:startup" Craete a "New Shortcut", give t
 Attention: When your usage will cross the limit 5800 minutes then your password will automatically changed to "1234" sothat your router can't connect to internet
 		   by your password. So when you see that your router can't connect to internet then you are assuered that you pass the limmit of 5800 minutes & also your
 		   password is now "1234"
+NB: Unfortunately the "lib" folder can't be uploaded in git, so you find it in https://drive.google.com/drive/folders/1zFVP5WjEq9ixa9xNZkKyFcQHM9pxywh6?usp=sharing
+download it from driev and add to master IUSERCHECK folder
 
 If you like the project please keep supporting me.
 M. K. Bashar
