@@ -22,7 +22,7 @@ about your usage.
 
 You have to do only 3 tasks & Forget about everything else.
 
-1. Download the git in zip format & unzip it & store in a permanent folder
+1. Download the zip file from releases & unzip it & store in a permanent folder
 2. Open the "idpass.txt", in this file store your userid & password in the format shown 
 (At first delete the line give as an example) & close it after save
 3. Press "Windows+R" type `shell:startup` Create a "New Shortcut", give the path of `tool.vbs` from your folder, 
@@ -33,7 +33,6 @@ by your password. So when you see that your router can't connect to internet the
 password is now `1234`
 
 NB: Unfortunately the "lib" folder can't be uploaded in git, so you find it in https://drive.google.com/drive/folders/1zFVP5WjEq9ixa9xNZkKyFcQHM9pxywh6?usp=sharing
-download it from drive and add to master IUSERCHECK folder
 
 Also, as of right now, this script is still a WIP (and therefore very unpolished, so expect many changes to the script in the near future. (GUI coming soon xD)
 
