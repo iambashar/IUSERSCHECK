@@ -32,6 +32,9 @@ Attention: When your usage will cross the limit 5800 minutes then your IUSERS pa
 by your password. So when you see that your router can't connect to internet then you are assuered that you pass the limit of 5800 minutes & also your
 password is now `1234`
 
+NB: Unfortunately the "lib" folder can't be uploaded in git, so you find it in https://drive.google.com/drive/folders/1zFVP5WjEq9ixa9xNZkKyFcQHM9pxywh6?usp=sharing
+download it from drive and add to master IUSERCHECK folder
+
 Also, as of right now, this script is still a WIP (and therefore very unpolished, so expect many changes to the script in the near future. (GUI coming soon xD)
 
 If you like the project please keep supporting me.  
