@@ -1,7 +1,6 @@
 import time
-p = 1
 
-while p < 6:
+while True:
     f = open("log.md", "a+")
     from requests import Session
     from bs4 import BeautifulSoup as bs
@@ -71,7 +70,6 @@ while p < 6:
         except:
             break
         i += 1
-    p += 1
     f.close()
     time.sleep(300)
 
