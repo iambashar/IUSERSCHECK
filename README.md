@@ -1,4 +1,4 @@
-#IUSERSCHECK
+# IUSERSCHECK
 
 Hello good people.
 
@@ -14,13 +14,11 @@ So I came up with a solution for this problem.
 What if, you don't check your usage regularly yourself, but let a silly script do that for you?
 This is what I made for you guys. This python script will do this task for you.
 
-##Usage
+## Usage
 
 Just open the "idpass.txt" file & enter your four or more(:v) roommates userid & password & save it
 Add "tool.vbs" to startup & restart your computer, That's all. Checking the log will give you more info
 about your usage.
-
-
 
 You have to do only 3 tasks & Forget about everything else.
 
@@ -36,6 +34,8 @@ password is now `1234`
 
 Also, as of right now, this script is still a WIP (and therefore very unpolished, so expect many changes to the script in the near future. (GUI coming soon xD)
 
-If you like the project please keep supporting me.
-M. K. Bashar
-180041238
+If you like the project please keep supporting me.  
+
+M. K. Bashar  
+
+180041238  
