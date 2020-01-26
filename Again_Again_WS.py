@@ -1,6 +1,7 @@
 
 import time
 import re
+import json
 
 from requests import Session
 from bs4 import BeautifulSoup as bs
@@ -11,21 +12,22 @@ while True:
     #TODO: Use logger for log features
     f = open("log.txt", "a+")
     #TODO: Use JSON instead of plaintext
-    settfile = open("idpass.txt", "r")
-    lines = settfile.read()
-    dpass = '1234'
-    dtime = 5800
-    l = lines.split(" ")
-
-    i = 1
-    while i:
+    settfile = open("config.json", "r")
+    jsett = json.load(settfile)
+    #lines = settfile.read()
+    dpass = jsett["fallbackPassword"]
+    dtime = jsett["timeLimit"]
+    l = jsett["users"]
+    i = 0
+    while True:
         try:
-            urname = l[(2*i)-2]
-            passwd = l[(2*i)-1]
+            #urname = l[i]["username"]
+            #passwd = l[i]["password"]
             with Session() as s:
                 site = s.get("http://10.220.20.12/index.php/home/loginProcess")
                 bs_content = bs(site.content, "html.parser")
-                login_data = {"username":urname,"password":passwd}
+                #login_data = {"username":urname,"password":passwd}
+                login_data = l[i]
                 s.post("http://10.220.20.12/index.php/home/loginProcess",login_data)
                 home_page = s.get("http://10.220.20.12/index.php/home/dashboard")
                 soup = bs(home_page.content, "lxml")
@@ -59,6 +61,7 @@ while True:
         except:
             break
         i += 1
+        i %= len(l)
     f.close()
     time.sleep(300)
 
