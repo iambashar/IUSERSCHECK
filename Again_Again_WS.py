@@ -1,44 +1,38 @@
+
 import time
+import re
+
+from requests import Session
+from bs4 import BeautifulSoup as bs
 
 while True:
-    f = open("log.md", "a+")
-    from requests import Session
-    from bs4 import BeautifulSoup as bs
-    import re
+    # log and settings
 
-    i = 1
-
-    lines = "Hi"
-
-
-    file = open("idpass.txt", "r")
-    lines = file.read()
+    #TODO: Use logger for log features
+    f = open("log.txt", "a+")
+    #TODO: Use JSON instead of plaintext
+    settfile = open("idpass.txt", "r")
+    lines = settfile.read()
     dpass = '1234'
     dtime = 5800
-    
-
     l = lines.split(" ")
 
+    i = 1
     while i:
         try:
-            un = l[(2*i)-2]
-            ps = l[(2*i)-1]
-            #print(un, ps)
-            with Session() as s:    
+            urname = l[(2*i)-2]
+            passwd = l[(2*i)-1]
+            with Session() as s:
                 site = s.get("http://10.220.20.12/index.php/home/loginProcess")
                 bs_content = bs(site.content, "html.parser")
-                login_data = {"username":un,"password":ps}
+                login_data = {"username":urname,"password":passwd}
                 s.post("http://10.220.20.12/index.php/home/loginProcess",login_data)
                 home_page = s.get("http://10.220.20.12/index.php/home/dashboard")
                 soup = bs(home_page.content, "lxml")
-
-                #print(results)
-
                 table = soup.table
 
                 c = 1
                 li = []
-
 
                 try:
                     table_rows = table.find_all('tr')
@@ -54,24 +48,19 @@ while True:
                     string1 = li[1]
                     m = int(re.search(r'\d+', string1).group())
                     print(m, 'Minutes')
-                    #f.write(" %d Minutes\n" % m)
-                    #check(m)
                     if m > dtime:
                         site = s.get("http://10.220.20.12/index.php/home/chPasswordProcess")
                         bs_content = bs(site.content, "html.parser")
                         cpass_data = {"curr_pass": ps, "new_pass": dpass, "conf_pass": dpass}
                         s.post("http://10.220.20.12/index.php/home/chPasswordProcess", cpass_data)
-                        #print("Your Password is set to", dpass)
-                        f.write("Your Password is set to %s" % dpass)
-
+                        f.write(f"Your Password is set to {dpass}")
                 except:
                     f.write("The username/password you entered is incorrect.\nTry again...")
-                    #print("The username/password you entered is incorrect.\nTry again...")
         except:
             break
         i += 1
     f.close()
     time.sleep(300)
 
-file.close()
+settfile.close()
 #t = input("Press enter to terminate")
