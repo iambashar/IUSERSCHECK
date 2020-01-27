@@ -36,7 +36,7 @@ NB: Unfortunately the "lib" folder can't be uploaded in git, so you find it in h
 
 Also, as of right now, this script is still a WIP (and therefore very unpolished, so expect many changes to the script in the near future. (GUI coming soon xD)
 
-**Disclaimer: The Code has still now few of bugs, so this isn't working properly right now. Use at your own risk**
+**Disclaimer: The Code has still now few of bugs, so this isn't working properly right now. Use at your own risk.**
 
 M. K. Bashar  
 180041238  
